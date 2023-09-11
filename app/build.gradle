@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "co.kr.itforone.jngk"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 6
+        versionName "1.05" // 22.02.14 변경 / 매니저 업로드 완료
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //dataBinding은 소스를 복사해서 붙여놓기로 하셔야 합니다.
+    //그리고 우측 상단에 Sync Now를 선택하시면 됩니다 ^^
+    /*dataBinding{
+        enabled = true
+    }*/
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+' // 크롭이미지를 쓸 때 쓰이는 라이브러리 입니다.
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0' // 잡아당길 때 새로고침이 되는 라이브러리 입니다.
+    implementation platform('com.google.firebase:firebase-bom:26.4.0')
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
+}

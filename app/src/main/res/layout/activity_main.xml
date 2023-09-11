@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <!-- name에는 변수로 쓸 네이밍을 지정하시고
+        type은 패키지명과 클래스명을 입력하시면 됩니다 -->
+        <variable
+            name="mainData"
+            type="co.kr.itforone.jngk.MainActivity" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MainActivity"
+        >
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/webLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:focusable="auto">
+
+            </WebView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+
+
+</layout>
